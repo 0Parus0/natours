@@ -15,6 +15,10 @@
     /* animation: moveInBottom 0.3s ease-out; */
     // transition: all 0.2s;
     /* font-size: 20px; */
+
+    // Changes for the <button> element
+    border: none;
+    cursor: pointer;
   }
   &:hover {
     transform: translateY(-0.3rem);
@@ -24,7 +28,9 @@
       opacity: 0;
     }
   }
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(variables.$color-black, 0.2);
   }
@@ -47,6 +53,14 @@
 
     &::after {
       background-color: variables.$color-white;
+    }
+  }
+  &--green {
+    background-color: variables.$color-primary;
+    color: variables.$color-white;
+
+    &::after {
+      background-color: variables.$color-primary;
     }
   }
 

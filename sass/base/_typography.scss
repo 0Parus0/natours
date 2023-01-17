@@ -1,7 +1,7 @@
 @use "../abstract/variables";
 
 body {
-  font-family: "Lato";
+  font-family: "Lato", sans-serif;
   padding: 3rem;
   font-size: variables.$default-font-size;
   line-height: 1.6;
