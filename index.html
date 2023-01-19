@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/styles-icons.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <title>Natours | Exciting Tours For Adventurous People</title>
+    <script src="app.js"></script>
   </head>
   <body>
     <div class="navigation">
@@ -96,14 +97,20 @@
                 src="./img/nat-1-large.jpg"
                 alt="photo 1"
                 class="composition__photo composition__photo--p1"
+                srcset="./img/nat-1.jpg 300w, ./img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 56.5em) 20vw, (max-width: 37.5em) 30vw 300px"
               /><img
                 src="./img/nat-2-large.jpg"
                 alt="photo 2"
                 class="composition__photo composition__photo--p2"
+                srcset="./img/nat-2.jpg 300w, ./img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 56.5em) 20vw, (max-width: 37.5em) 30vw 300px"
               /><img
                 src="./img/nat-3-large.jpg"
                 alt="photo 3"
                 class="composition__photo composition__photo--p3"
+                srcset="./img/nat-3.jpg 300w, ./img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 56.5em) 20vw, (max-width: 37.em) 30vw 300px"
               />
             </div>
           </div>
@@ -397,11 +404,21 @@
     </main>
     <footer class="footer">
       <div class="footer__logo-box u-center-text u-margin-bottom-small">
-        <img
-          src="./img/logo-green-2x.png"
-          alt="full logo"
-          class="footer__logo"
-        />
+        <picture class="footer__logo">
+          <source
+            srcset="
+              ./img/logo-green-small-1x.png 1x,
+              ./img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5rem)"
+          />
+          <img
+            srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x"
+            alt="full logo"
+            class="footer__logo"
+            src="./img/logo-green-2x.png"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-2">
@@ -465,7 +482,7 @@
             consequuntur atque nobis nesciunt! Illum architecto aliquid fugit
             officia quasi! Lorem ipsum dolor sit amet consectetur, adipisicing
             elit. Aut consectetur quibusdam quos inventore provident neque
-            praesentium illo pariatur facere quia.
+            praesentium illo pariatur facere.
           </p>
         </div>
       </div>

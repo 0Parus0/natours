@@ -1,7 +1,9 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .navigation {
   &__checkbox {
+    display: none;
   }
   &__button {
     width: 7rem;
@@ -15,6 +17,16 @@
     z-index: 2000;
     text-align: center;
     cursor: pointer;
+
+    @include mixins.respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include mixins.respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
   &__background {
     width: 6rem;
@@ -30,6 +42,16 @@
       variables.$color-primary-dark
     );
     transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+    @include mixins.respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include mixins.respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
   &__nav {
     height: 100vh;
@@ -37,8 +59,9 @@
     top: 0;
     left: 0;
     z-index: 1500;
+    transform: translateX(-100vw);
     opacity: 0;
-    width: 0;
+    width: 100%;
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   &__list {
@@ -93,7 +116,8 @@
 
   &__checkbox:checked ~ &__nav {
     opacity: 1;
-    width: 100%;
+    // width: 100%;
+    transform: translateX(0);
   }
 
   &__icon {
